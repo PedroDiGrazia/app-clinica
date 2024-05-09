@@ -69,3 +69,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 extension=zip -> php.ini
 composer install 
 npm install --save-dev electron
+git bash -> php artisan migrate
