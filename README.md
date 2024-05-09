@@ -72,7 +72,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - **git bash -> php artisan migrate**
 
 Caso não haja arquivo .env copie o .env.example
-- **No arquivo .env substitua**
+- No arquivo .env substitua:
 ```plaintext
 MAIL_MAILER=smtp
 MAIL_HOST=sandbox.smtp.mailtrap.io
