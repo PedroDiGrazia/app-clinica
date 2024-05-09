@@ -85,3 +85,4 @@ MAIL_FROM_NAME="${APP_NAME}"
 ````
 - **npm start**
 - **php artisan serve**
+- **resources -> views -> DELETE:"welcome.blade.php"**
