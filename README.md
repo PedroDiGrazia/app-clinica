@@ -66,10 +66,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # app-clinica
 
--extension=zip -> php.ini
--composer install 
--npm install --save-dev electron
--git bash -> php artisan migrate
+- **extension=zip -> php.ini**
+- **composer install** 
+- **npm install --save-dev electron**
+- **git bash -> php artisan migrate**
 
 Caso não haja arquivo .env copie o .env.example
 No arquivo .env substitua
@@ -83,5 +83,5 @@ MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS="no-reply@mailtrap.club"
 MAIL_FROM_NAME="${APP_NAME}"
 ````
--npm start
--php artisan serve
+- **npm start**
+- **php artisan serve**
