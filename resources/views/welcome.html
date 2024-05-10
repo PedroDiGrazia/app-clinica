@@ -104,9 +104,18 @@
     </style>
 </head>
 <body>
+
     <header>
         <h1>Clínica Mentalis 🧠</h1>
+            <form action="/cadastro" method="get">  
+                <button type="submit" class="btn btn-primary">cadastro</button>
+            </form>
+            <form action="/login" method="get">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
     </header>
+
+    
     <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -145,11 +154,35 @@
             <h2 class="Topicos">Sobre a Clínica</h2>
             <p class="paragrafos">A Clínica Mentalis é reconhecida por sua excelência no atendimento médico e pela dedicação em proporcionar cuidados de saúde excepcionais a todos os pacientes.</p>
         </section>
-        <section class="testimonial">
+        
+        <section id="depoimentos" class="carousel slide" data-ride="carousel">
             <h2 class="Topicos">Depoimentos de Pacientes</h2>
-            <p class="testimonial-individual">"Estou muito satisfeito com o atendimento que recebi na Clínica Mentalis. Os médicos são extremamente competentes e atenciosos." - João Silva</p>
-            <p class="testimonial-individual">"Recomendo a Clínica Mentalis a todos que buscam um serviço médico de qualidade e confiança." - Maria Santos</p>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <p class="testimonial-individual">"Estou muito satisfeito com o atendimento que recebi na Clínica Mentalis. Os médicos são extremamente competentes e atenciosos." - João Silva</p>
+                        </div>
+                        <div class="carousel-item">
+                            <p class="testimonial-individual">"Recomendo a Clínica Mentalis a todos que buscam um serviço médico de qualidade e confiança." - Maria Santos</p>
+                        </div>
+                        <!-- Adicione mais depoimentos como novos carousel-item conforme necessário -->
+                    </div>
+            </div>
+            <a class="carousel-control-prev" href="#depoimentos" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#depoimentos" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </section>
+
         <section class="contact-form">
             <h2>Formulário de Contato</h2>
             <form action="/testroute" method="post">
