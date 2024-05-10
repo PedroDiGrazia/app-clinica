@@ -66,7 +66,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # app-clinica
 
-- **extension=zip -> php.ini**
+- **extension=zip, extension=pdo_sqlite, extension=fileinfo -> php.ini**
 - **composer install** 
 - **npm install --save-dev electron**
 - **git bash -> php artisan migrate**
