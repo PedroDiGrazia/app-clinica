@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Estilos personalizados para o formulário de cadastro */
+        /* Centralizar o conteúdo do formulário */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5; /* Alterando a cor de fundo */
+        }
+        
+        /* Estilo para o formulário */
+        form {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adicionando sombra */
+        }
+        
+        /* Estilo para os campos de entrada */
+        .input {
+            width: 100%;
+            margin-bottom: 20px; /* Aumentando o espaçamento entre os campos */
+        }
+        
+        /* Estilo para o botão de cadastro */
+        .button {
+            width: 100%;
+        }
+        
+        /* Estilo para o título do formulário */
+        .title {
+            text-align: center;
+            margin-bottom: 30px; /* Aumentando o espaçamento abaixo do título */
+            color: #333; /* Alterando a cor do título */
+            font-size: 24px; /* Aumentando o tamanho do título */
+        }
+
+        #backToLoginLink {
+            display: flex;
+            justify-content: center;
+            color: #777; /* Alterando a cor do link */
+        }
+
+        #backToLoginLink:hover {
+            color: #333; /* Alterando a cor do link ao passar o mouse */
+        }
+    
+    </style>
+</head>
+
+
+<body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Cadastre-se</h1>
+        <form>
+          <div class="field">
+            <label class="label">Usuário</label>
+            <div class="control">
+              <input id="userInput" class="input" type="text" placeholder="Informe seu usuário">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">E-mail</label>
+            <div class="control">
+              <input id="emailInput" class="input" type="email" placeholder="Informe seu e-mail">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Senha</label>
+            <div class="control">
+              <input id="passwordInput" class="input" type="password" placeholder="Informe sua senha">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">CEP</label>
+            <div class="control">
+              <input id="CEPInput" class="input" type="text" placeholder="Informe seu CEP">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button id="cadastroButton" class="button btn btn-primary">Cadastrar</button> <!-- Adicionando classes do Bootstrap -->
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <a id="backToLoginLink" href="/"> Voltar para o Login </a> <!-- Alterando o texto do link -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script>
+  
+      document.getElementById('cadastroButton').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        var username = document.getElementById('userInput').value;
+        var email = document.getElementById('emailInput').value;
+        var password = document.getElementById('passwordInput').value;
+        var address = document.getElementById('CEPInput').value;
+        //Armazena os valores de cada campo
+
+        let userData = {
+          username: username,
+          email: email,
+          password: password,
+          address: address
+        };
+        //Armazena todas as informações em um objeto
+
+        console.log(userData);
+
+        //Solicita o endereço http/cadastrar-user que enviara dados ao servidor
+        fetch('http://localhost:3000/cadastrar-user', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(userData),
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erro na requisição');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Usuário cadastrado com sucesso:', data);
+          window.location.href = './menu.html';
+        })
+        .catch((error) => {
+          console.error('Erro:', error);
+          alert('Ocorreu um erro: ' + error.message);
+        });
+      });
+    </script>
+  </body>
+</html>
