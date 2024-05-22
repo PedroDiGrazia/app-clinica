@@ -11,9 +11,11 @@ cp .env.example .env
 
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
-APP_NAME=Laravel
-APP_URL=http://localhost:8080
-
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=sys
+DB_USERNAME=root
 DB_PASSWORD=root
 ```
 Caso não haja arquivo .env copie o .env.example
