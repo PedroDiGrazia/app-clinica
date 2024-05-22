@@ -9,7 +9,7 @@ function createWindow() {
     }
   });
 
-  mainWindow.loadURL('http://localhost:8000');
+  mainWindow.loadURL('http://localhost:8080');
 
   //mainWindow.webContents.openDevTools();
 }
