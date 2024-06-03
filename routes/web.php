@@ -1,42 +1,35 @@
 <?php
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/testroute', function () {
-    Mail::to(users: 'mailtrap.club@gmail.com')->send(new \App\Mail\MyTestEmail());
-});
-
-Route::get('/cadastro', function(){
-    return view('cadastro');
-});
-
-Route::get('/login', function(){
-    return view('login');
-});
-
-Route::post('/cadastro', function(Request $request){
-    // Validar os dados do formulário
-    $request->validate([
-        'nome' => 'required|string|max:255',
-        'endereco' => 'required|string|max:255',
-        'celular' => 'required|string|max:20',
-        'senha' => 'required|string|min:6',
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
     ]);
-
-    // Criar um novo usuário
-    $user = new User();
-    $user->nome = $request->input('nome');
-    $user->endereco = $request->input('endereco');
-    $user->celular = $request->input('celular');
-    $user->senha = bcrypt($request->input('senha')); // Salvar a senha criptografada
-    $user->save();
-
-    // Redirecionar para a página de login
-    return redirect('/login')->with('success', 'Cadastro realizado com sucesso!');
 });
 
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/profissional', function () {
+    return Inertia::render('Profissional');
+});
+
+require __DIR__.'/auth.php';
