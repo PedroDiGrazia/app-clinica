@@ -24,8 +24,22 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/secretaria', function () {
+    return Inertia::render('Secretaria');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/alertasecretaria', function () {
+    return Inertia::render('AlertaSecretaria');
+});
+
+Route::get('/cadastrosecretaria', function () {
+    return Inertia::render('CadastroSecretaria');
+});
+
 require __DIR__.'/auth.php';
+
+
