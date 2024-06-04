@@ -7,6 +7,11 @@ Bem-vindo a **Clinica Mentalis**, um sistema desenvolvido para auxiliar uma clí
 ### Extensões
 Este repositório contém um sistema Clínico desenvolvido utilizando:
 
+
+**MySQL:** Um sistema de gerenciamento de banco de dados relacional.
+
+**VueJS:** Utilizado para o desenvolvimento do front-end do projeto.
+
 **ElectronJS:** Um framework para criar aplicativos de desktop multiplataforma utilizando tecnologias web como HTML, CSS e JavaScript.
 
 **Docker:** Uma plataforma para desenvolver, empacotar e executar aplicativos dentro de contêineres.
@@ -15,9 +20,6 @@ Este repositório contém um sistema Clínico desenvolvido utilizando:
 
 **PHP:** Uma linguagem de programação amplamente utilizada para desenvolvimento web.
 
-**MySQL:** Um sistema de gerenciamento de banco de dados relacional.
-
-**VueJS:** Utilizado para o desenvolvimento do front-end do projeto.
 
 
 ### Passo a passo
