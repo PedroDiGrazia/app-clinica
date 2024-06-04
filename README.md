@@ -2,7 +2,7 @@
 # App Clinica Mentalis
 
 ### Contexto
-Bem-vindo ao **Clinica Mentalis**, um sistema desenvolvido para auxiliar uma clínica de psicologia a gerenciar suas operações e facilitar o acesso dos clientes aos serviços da clínica. Este sistema possui funcionalidades para clientes e profissionais da clínica (psicólogos e secretárias), permitindo a consulta e o acréscimo de informações dos clientes com as devidas permissões de acesso.
+Bem-vindo a **Clinica Mentalis**, um sistema desenvolvido para auxiliar uma clínica de psicologia a gerenciar suas operações e facilitar o acesso dos clientes aos serviços da clínica. Este sistema possui funcionalidades para clientes e profissionais da clínica (psicólogos e secretárias), permitindo a consulta e o acréscimo de informações dos clientes com as devidas permissões de acesso.
 
 ### Extensões
 Este repositório contém um sistema Clínico desenvolvido utilizando:
