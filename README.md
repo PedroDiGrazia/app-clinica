@@ -2,19 +2,23 @@
 # App Clinica Mentalis
 
 ### Contexto
-Bem-vindo ao Clinica Mentalis, um sistema desenvolvido para auxiliar uma clínica de psicologia a gerenciar suas operações e facilitar o acesso dos clientes aos serviços da clínica. Este sistema possui funcionalidades para clientes e profissionais da clínica (psicólogos e secretárias), permitindo a consulta e o acréscimo de informações dos clientes com as devidas permissões de acesso.
+Bem-vindo ao **Clinica Mentalis**, um sistema desenvolvido para auxiliar uma clínica de psicologia a gerenciar suas operações e facilitar o acesso dos clientes aos serviços da clínica. Este sistema possui funcionalidades para clientes e profissionais da clínica (psicólogos e secretárias), permitindo a consulta e o acréscimo de informações dos clientes com as devidas permissões de acesso.
 
 ### Extensões
 Este repositório contém um sistema Clínico desenvolvido utilizando:
 
-ElectronJS ElectronJS : Framework para criar aplicativos de desktop multiplataforma usando tecnologias web (HTML, CSS e JavaScript).
-Docker Docker : Plataforma para desenvolver, enviar e executar aplicativos em contêineres.
-Laravel Laravel : Framework PHP para desenvolvimento de aplicativos web robustos e escaláveis.
-PHP PHP : Linguagem de programação amplamente usada para desenvolvimento web.
-MySQL MySQL : Sistema de gerenciamento de banco de dados relacional.
-VueJS VueJS : Utilizado para o front-end do projeto.
-PHPUnit PHPUnit : Usamos o PHPUnit para executar testes.
-ViaCep ViaCep: E uma API para preenchimento automático de endereços a partir de um CEP fornecido pelo usuário.
+**ElectronJS:** Um framework para criar aplicativos de desktop multiplataforma utilizando tecnologias web como HTML, CSS e JavaScript.
+
+**Docker:** Uma plataforma para desenvolver, empacotar e executar aplicativos dentro de contêineres.
+
+**Laravel:** Um framework PHP destinado ao desenvolvimento de aplicativos web.
+
+**PHP:** Uma linguagem de programação amplamente utilizada para desenvolvimento web.
+
+**MySQL:** Um sistema de gerenciamento de banco de dados relacional.
+
+**VueJS:** Utilizado para o desenvolvimento do front-end do projeto.
+
 
 ### Passo a passo
 Clone Repositório criado a partir do template, entre na pasta e execute os comandos abaixo:
