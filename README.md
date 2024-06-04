@@ -1,5 +1,20 @@
 
-# Laravel Template
+# App Clinica Mentalis
+
+### Contexto
+Bem-vindo ao Clinica Mentalis, um sistema desenvolvido para auxiliar uma clínica de psicologia a gerenciar suas operações e facilitar o acesso dos clientes aos serviços da clínica. Este sistema possui funcionalidades para clientes e profissionais da clínica (psicólogos e secretárias), permitindo a consulta e o acréscimo de informações dos clientes com as devidas permissões de acesso.
+
+### Extensões
+Este repositório contém um sistema Clínico desenvolvido utilizando:
+
+ElectronJS ElectronJS : Framework para criar aplicativos de desktop multiplataforma usando tecnologias web (HTML, CSS e JavaScript).
+Docker Docker : Plataforma para desenvolver, enviar e executar aplicativos em contêineres.
+Laravel Laravel : Framework PHP para desenvolvimento de aplicativos web robustos e escaláveis.
+PHP PHP : Linguagem de programação amplamente usada para desenvolvimento web.
+MySQL MySQL : Sistema de gerenciamento de banco de dados relacional.
+VueJS VueJS : Utilizado para o front-end do projeto.
+PHPUnit PHPUnit : Usamos o PHPUnit para executar testes.
+ViaCep ViaCep: E uma API para preenchimento automático de endereços a partir de um CEP fornecido pelo usuário.
 
 ### Passo a passo
 Clone Repositório criado a partir do template, entre na pasta e execute os comandos abaixo:
@@ -34,12 +49,15 @@ docker compose exec app bash
 Instalar as dependências do projeto
 ```sh
 composer install
+npm install
+php artisan key:generate
+npm run build
 ```
 
 
-Gerar a key do projeto Laravel
+Agora já fora do container
 ```sh
-php artisan key:generate
+npm start
 ```
 
 
@@ -48,34 +66,3 @@ Acesse o projeto
 
 Acesse o phpmyadmin
 [http://localhost:8081](http://localhost:8081)
-
-API de categorias e filmes:
-https://www.learn-laravel.cf/
-
-Rotas:
-- (get) /categories
-- (get) /category/{id}
-- (get) /movies
-- (get) /movie/{id}
-
-### Como realizar requisições HTTP get:
-Adicionar no arquivo web.php e acesse a rota [http://localhost:8080/requisicao](http://localhost:8080/requisicao)
-```php
-Route::get('/requisicao', function () {
-    $json = \Illuminate\Support\Facades\Http::get('https://learn-laravel.cf/movie/1')->body();
-    dd($json);
-});
-```
-Em caso de sucesso irá aparecer a mensagem (em linha única sem formatação):
-```json
-{
-    "id": 1,
-    "name": "Zack and Miri Make a Porno",
-    "category_id": 6,
-}
-```
-
-### Como criar tela de login no Laravel (ATENÇÃO LER DESCERIÇÃO DOS VIDEOS):
-
-- Criação login sem node: [https://youtu.be/V2s2toQNMG0](https://youtu.be/V2s2toQNMG0)
-- Criação login com node: [https://youtu.be/UhOYeYoK3Bc](https://youtu.be/UhOYeYoK3Bc)
