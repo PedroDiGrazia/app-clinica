@@ -52,9 +52,6 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-between">
-                <!-- <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Forgot your password?
-                </Link> -->
 
                 <a href="./register" class="underline text-sm text-blue-600 hover:text-gray-900">Não possui um cadastro ainda? Clique aqui.</a>
             </div>
@@ -65,7 +62,7 @@ const submit = () => {
             </div>
         </form>
         <div class="flex justify-center mt-4">
-            <a href="./profissional" class="btn btn-professional">Profissional</a>
+            <a href="./secretariaregister" class="btn btn-professional">Secretaria</a>
         </div>
     </GuestLayout>
 </template>

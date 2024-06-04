@@ -9,8 +9,10 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\SecretariaController;
 
 Route::middleware('guest')->group(function () {
+
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
 
     Route::post('register', [RegisteredUserController::class, 'store']);
@@ -19,9 +21,11 @@ Route::middleware('guest')->group(function () {
 
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
-    Route::get('profissional', [AuthenticatedSessionController::class, 'create_profissional'])->name('profissional');
+    Route::get('secretaria', [SecretariaController::class, 'create'])->name('secretaria');
 
-    Route::post('profissional', [AuthenticatedSessionController::class, 'store']);
+    Route::get('secretariaregister', [SecretariaController::class, 'create_register'])->name('secretaria');
+
+    Route::post('secretariaregister', [SecretariaController::class, 'store_register']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
 
