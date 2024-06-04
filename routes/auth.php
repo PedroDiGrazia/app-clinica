@@ -9,6 +9,12 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+<<<<<<< Updated upstream
+=======
+use App\Http\Controllers\Auth\SecretariaController;
+use App\Http\Controllers\Auth\SecretariaLoginController;
+use App\Http\Controllers\Auth\PsicologoController;
+>>>>>>> Stashed changes
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
@@ -19,6 +25,21 @@ Route::middleware('guest')->group(function () {
 
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
+<<<<<<< Updated upstream
+=======
+    Route::get('secretaria', [SecretariaLoginController::class, 'create'])->name('secretaria');
+
+    Route::post('secretaria', [SecretariaLoginController::class, 'store']);
+
+    Route::get('secretariaregister', [SecretariaController::class, 'create_register'])->name('secretariaregister');
+
+    Route::post('secretariaregister', [SecretariaController::class, 'store_register']);
+
+    Route::get('psicologoregister', [PsicologoController::class, 'create_register'])->name('psicologoregister');
+
+    Route::post('psicologoregister', [PsicologoController::class, 'store_register']);
+
+>>>>>>> Stashed changes
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])->name('password.request');
 
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
@@ -40,4 +61,5 @@ Route::middleware('auth')->group(function () {
     Route::post('confirm-password', [ConfirmablePasswordController::class, 'store']);
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
 });

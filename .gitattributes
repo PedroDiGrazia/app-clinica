@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 * text=auto
 
 *.blade.php diff=html
@@ -11,6 +12,8 @@
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
 =======
+=======
+>>>>>>> Stashed changes
 * text=auto
 
 *.blade.php diff=html
@@ -22,4 +25,7 @@ CHANGELOG.md export-ignore
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

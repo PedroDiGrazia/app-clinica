@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #!/usr/bin/env php
 <?php
 
@@ -53,6 +54,8 @@ $kernel->terminate($input, $status);
 
 exit($status);
 =======
+=======
+>>>>>>> Stashed changes
 #!/usr/bin/env php
 <?php
 
@@ -106,4 +109,7 @@ $status = $kernel->handle(
 $kernel->terminate($input, $status);
 
 exit($status);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 {
     "name": "laravel/laravel",
     "type": "project",
@@ -68,6 +69,8 @@
     "prefer-stable": true
 }
 =======
+=======
+>>>>>>> Stashed changes
 {
     "name": "laravel/laravel",
     "type": "project",
@@ -136,4 +139,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

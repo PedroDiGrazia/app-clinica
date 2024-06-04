@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 const { app, BrowserWindow } = require('electron')
 
 function createWindow () {
@@ -28,6 +29,8 @@ app.on('window-all-closed', () => {
     app.quit()             
   }
 =======
+=======
+>>>>>>> Stashed changes
 const { app, BrowserWindow } = require('electron')
 
 function createWindow () {
@@ -56,5 +59,8 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()             
   }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 })

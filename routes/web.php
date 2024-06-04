@@ -28,8 +28,13 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+<<<<<<< Updated upstream
 Route::get('/profissional', function () {
     return Inertia::render('Profissional');
 });
 
+=======
+
+
+>>>>>>> Stashed changes
 require __DIR__.'/auth.php';

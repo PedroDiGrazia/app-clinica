@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /node_modules
 /public/build
 /public/hot
@@ -16,6 +17,8 @@ yarn-error.log
 /.idea
 /.vscode
 =======
+=======
+>>>>>>> Stashed changes
 /node_modules
 /public/build
 /public/hot
@@ -32,4 +35,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -40,6 +40,25 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+<<<<<<< Updated upstream
+=======
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+
+        'secretaria' => [
+            'driver' => 'session',
+            'provider' => 'secretaria',
+        ],
+
+        'psicologo' => [
+            'driver' => 'session',
+            'provider' => 'psicologo',
+        ],
+>>>>>>> Stashed changes
     ],
 
     /*
@@ -65,6 +84,7 @@ return [
             'model' => App\Models\User::class,
         ],
 
+<<<<<<< Updated upstream
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -86,6 +106,19 @@ return [
     |
     */
 
+=======
+        'secretaria' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Secretaria::class,
+        ],
+
+        'psicologo' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Psicologo::class,
+        ],
+    ],
+
+>>>>>>> Stashed changes
     'passwords' => [
         'users' => [
             'provider' => 'users',
@@ -93,6 +126,23 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+<<<<<<< Updated upstream
+=======
+
+        'secretaria' => [
+            'provider' => 'secretaria',
+            'table' => 'secretaria_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'psicologo' => [
+            'provider' => 'psicologo',
+            'table' => 'psicologo_password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+>>>>>>> Stashed changes
     ],
 
     /*

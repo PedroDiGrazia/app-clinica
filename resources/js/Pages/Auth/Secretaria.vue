@@ -6,6 +6,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import Header from '@/Components/Header.vue';
 
 defineProps({
     canResetPassword: Boolean,
@@ -13,19 +14,20 @@ defineProps({
 });
 
 const form = useForm({
-    email: '',
+    registrosec: '',
     password: '',
     remember: false
 });
 
 const submit = () => {
-    form.post(route('login'), {
+    form.post(route('secretaria'), {
         onFinish: () => form.reset('password'),
     });
 };
 </script>
 
 <template>
+<Header />
     <GuestLayout>
         <Head title="Log in" />
 
@@ -35,9 +37,9 @@ const submit = () => {
 
         <form @submit.prevent="submit" class="space-y-6">
             <div>
-                <InputLabel for="email" value="Email" />
-                <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputLabel for="registrosec" value="RS" />
+                <TextInput id="registrosec" type="text" class="mt-1 block w-full" v-model="form.registrosec" required autofocus autocomplete="username" />
+                <InputError class="mt-2" :message="form.errors.registrosec" />
             </div>
 
             <div>
@@ -50,26 +52,17 @@ const submit = () => {
                 <Checkbox name="remember" v-model:checked="form.remember" />
                 <span class="ml-2 text-sm text-gray-600">Remember me</span>
             </div>
-<<<<<<< Updated upstream
 
             <div class="flex items-center justify-between">
-                <!-- <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    Forgot your password?
-                </Link> -->
 
-                <a href="./register" class="underline text-sm text-blue-600 hover:text-gray-900">Não possui um cadastro ainda? Clique aqui.</a>
+                <a href="./secretariaregister" class="underline text-sm text-blue-600 hover:text-gray-900">Não possui um cadastro ainda? Clique aqui.</a>
             </div>
-=======
             <div class="flex justify-center mt-4">
->>>>>>> Stashed changes
                 <PrimaryButton class="btn btn-primary" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in
                 </PrimaryButton>
-                <a href="./profissional" class="ml-4 btn btn-professional">Profissional</a>
+            </div>
         </form>
-
-        <div class="flex justify-center mt-4 space-x-4">
-        </div>
     </GuestLayout>
 </template>
 

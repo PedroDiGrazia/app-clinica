@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Rotas protegidas pelo middleware de autenticação do Sanctum
+Route::middleware('auth:sanctum')->group(function () {
+    // Rotas de agendamentos
+    Route::get('/appointments', [AppointmentController::class, 'index']); // Listar todos os agendamentos
+
+    Route::post('/appointments', [AppointmentController::class, 'store']); // Criar um novo agendamento
+
+    Route::get('/appointments/{id}', [AppointmentController::class, 'show']); // Exibir um agendamento específico
+
+    Route::put('/appointments/{id}', [AppointmentController::class, 'update']); // Atualizar um agendamento existente
+    
+    Route::delete('/appointments/{id}', [AppointmentController::class, 'destroy']); // Excluir um agendamento existente
 });

@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
@@ -7855,6 +7856,8 @@
     "plugin-api-version": "2.6.0"
 }
 =======
+=======
+>>>>>>> Stashed changes
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
@@ -15710,4 +15713,7 @@
     "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

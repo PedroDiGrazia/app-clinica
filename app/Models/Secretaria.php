@@ -2,16 +2,15 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Secretaria extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    protected $table = 'secretaria'; // Defina explicitamente a tabela
     /**
      * The attributes that are mass assignable.
      *
@@ -19,7 +18,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'registrosec',
         'password',
     ];
 
@@ -39,16 +38,6 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'registrosec_verified_at' => 'datetime',
     ];
-
-    /**
-     * Define the relationship with appointments.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function appointments()
-    {
-        return $this->hasMany(Appointment::class);
-    }
 }
