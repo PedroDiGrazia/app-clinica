@@ -29,7 +29,11 @@ class SecretariaRequest extends FormRequest
     public function rules()
     {
         return [
+<<<<<<< Updated upstream
             'rs' => ['required', 'string'],
+=======
+            'registrosec' => ['required', 'string'],
+>>>>>>> Stashed changes
             'password' => ['required', 'string'],
         ];
     }
@@ -45,11 +49,19 @@ class SecretariaRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
+<<<<<<< Updated upstream
         if (! Auth::attempt($this->only('rs', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
                 'rs' => trans('auth.failed'),
+=======
+        if (! Auth::attempt($this->only('registrosec', 'password'), $this->boolean('remember'))) {
+            RateLimiter::hit($this->throttleKey());
+
+            throw ValidationException::withMessages([
+                'registrosec' => trans('auth.failed'),
+>>>>>>> Stashed changes
             ]);
         }
 
@@ -74,7 +86,11 @@ class SecretariaRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
+<<<<<<< Updated upstream
             'rs' => trans('auth.throttle', [
+=======
+            'registrosec' => trans('auth.throttle', [
+>>>>>>> Stashed changes
                 'seconds' => $seconds,
                 'minutes' => ceil($seconds / 60),
             ]),
@@ -88,6 +104,10 @@ class SecretariaRequest extends FormRequest
      */
     public function throttleKey()
     {
+<<<<<<< Updated upstream
         return Str::transliterate(Str::lower($this->input('rs')).'|'.$this->ip());
+=======
+        return Str::transliterate(Str::lower($this->input('registrosec')).'|'.$this->ip());
+>>>>>>> Stashed changes
     }
 }

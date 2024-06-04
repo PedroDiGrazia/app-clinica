@@ -11,9 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
-use App\Models\Secretaria; // Importe a model Secretaria, se ainda não tiver feito isso
+use App\Models\Psicologo; // Importe a model Secretaria, se ainda não tiver feito isso
 
-class SecretariaController extends Controller
+class PsicologoController extends Controller
 {
     /**
      * Display the registration view.
@@ -22,21 +22,9 @@ class SecretariaController extends Controller
      */
     public function create_register()
     {
-        return Inertia::render('Auth/SecretariaRegister');
+        return Inertia::render('Auth/PsicologoRegister');
     }
-<<<<<<< Updated upstream
-=======
 
-    /**
-     * Display the registration view.
-     *
-     * @return \Inertia\Response
-     */
-    public function create_dashboard()
-    {
-        return Inertia::render('Auth/Dashboard_Secretaria');
-    }
->>>>>>> Stashed changes
     /**
      * Handle an incoming registration request.
      *
@@ -49,33 +37,25 @@ class SecretariaController extends Controller
         // Validate the request
         $request->validate([
             'name' => 'required|string|max:255',
-            'registrosec' => 'required|string|max:255|unique:secretaria',
+            'registropsi' => 'required|string|max:255|unique:psicologo',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         // Create a new secretaria
-        $secretaria = Secretaria::create([
+        $psicologo = Psicologo::create([
             'name' => $request->name,
-            'registrosec' => $request->registrosec,
+            'registropsi' => $request->registropsi,
             'password' => Hash::make($request->password),
         ]);
 
         // Fire the Registered event
-        event(new Registered($secretaria));
+        event(new Registered($psicologo));
 
         // Autenticar o usuário
-<<<<<<< Updated upstream
-        Auth::guard('web')->login($secretaria);
-
+        Auth::guard('psicologo')->login($psicologo);
         // Redirect to the home page
-        return redirect(RouteServiceProvider::HOME);
-    }
-=======
-        Auth::guard('secretaria')->login($secretaria);
-        // Redirect to the home page
-        return redirect()->route('secretaria');
+        return redirect()->route('dashboard_secretaria');
     }
 
->>>>>>> Stashed changes
 }
 

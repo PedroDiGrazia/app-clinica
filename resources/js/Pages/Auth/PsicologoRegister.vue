@@ -5,41 +5,28 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-<<<<<<< Updated upstream
-=======
 import Header from '@/Components/Header.vue';
->>>>>>> Stashed changes
 
 const form = useForm({
     name: '',
-    registrosec: '',
+    registropsi: '',
     password: '',
     password_confirmation: '',
     terms: false,
 });
 
 const submit = () => {
-<<<<<<< Updated upstream
-    form.post(route('secretaria'), {
-=======
-    form.post(route('secretariaregister'), {
->>>>>>> Stashed changes
+    form.post(route('psicologoregister'), {
         onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
 </script>
 
 <template>
-<<<<<<< Updated upstream
-    <GuestLayout>
-        <Head title="Register-sec" />
-
-=======
     <Header />
     <GuestLayout>
-        <h1 class="text-xl flex items-center mt-4">REGISTRO SECRETARIA</h1>
-        <Head title="Register-sec" />
->>>>>>> Stashed changes
+        <h1 class="text-xl flex items-center mt-4">REGISTRO PSICOLOGO</h1>
+        <Head title="Register-psi" />
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="name" value="Name" />
@@ -48,13 +35,9 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-<<<<<<< Updated upstream
-                <InputLabel for="registrosec" value="RS" />
-=======
-                <InputLabel for="registrosec" value="registrosec" />
->>>>>>> Stashed changes
-                <TextInput id="registrosec" type="text" class="mt-1 block w-full" v-model="form.registrosec" required autocomplete="username" />
-                <InputError class="mt-2" :message="form.errors.registrosec" />
+                <InputLabel for="registropsi" value="registropsi" />
+                <TextInput id="registropsi" type="text" class="mt-1 block w-full" v-model="form.registropsi" required autocomplete="username" />
+                <InputError class="mt-2" :message="form.errors.registropsi" />
             </div>
 
             <div class="mt-4">
@@ -70,15 +53,9 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-<<<<<<< Updated upstream
-                <Link :href="route('login')" class="underline text-sm text-blue-600 hover:text-gray-900">
-                    Já possui um registro? Clique aqui
-                </Link>
-=======
-                <a href="./secretaria" class="underline text-sm text-blue-600 hover:text-gray-900">
+                <a href="./psiretaria" class="underline text-sm text-blue-600 hover:text-gray-900">
                     Já possui um registro? Clique aqui
                 </a>
->>>>>>> Stashed changes
 
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register

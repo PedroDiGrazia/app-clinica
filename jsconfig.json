@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {
     "compilerOptions": {
         "baseUrl": ".",
@@ -7,3 +8,14 @@
     },
     "exclude": ["node_modules", "public"]
 }
+=======
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["resources/js/*"]
+        }
+    },
+    "exclude": ["node_modules", "public"]
+}
+>>>>>>> Stashed changes

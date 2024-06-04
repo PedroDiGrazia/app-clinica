@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 php:
   preset: laravel
   disabled:
@@ -7,3 +8,14 @@ php:
       - index.php
 js: true
 css: true
+=======
+php:
+  preset: laravel
+  disabled:
+    - no_unused_imports
+  finder:
+    not-name:
+      - index.php
+js: true
+css: true
+>>>>>>> Stashed changes

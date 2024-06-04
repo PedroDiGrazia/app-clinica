@@ -2,23 +2,15 @@
 
 namespace App\Models;
 
-<<<<<<< Updated upstream
-// use Illuminate\Contracts\Auth\MustVerifyrs;
-=======
->>>>>>> Stashed changes
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Secretaria extends Authenticatable
+class Psicologo extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-<<<<<<< Updated upstream
-    protected $table = 'secretaria';
-=======
-    protected $table = 'secretaria'; // Defina explicitamente a tabela
->>>>>>> Stashed changes
+    protected $table = 'psicologo'; // Defina explicitamente a tabela
     /**
      * The attributes that are mass assignable.
      *
@@ -26,11 +18,7 @@ class Secretaria extends Authenticatable
      */
     protected $fillable = [
         'name',
-<<<<<<< Updated upstream
-        'rs',
-=======
-        'registrosec',
->>>>>>> Stashed changes
+        'registropsi',
         'password',
     ];
 
@@ -50,10 +38,6 @@ class Secretaria extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-<<<<<<< Updated upstream
-        'rs_verified_at' => 'datetime',
-=======
         'registrosec_verified_at' => 'datetime',
->>>>>>> Stashed changes
     ];
 }
