@@ -5,18 +5,30 @@
         <p class="text-lg font-medium">{{ testimonial.text }} - {{ testimonial.author }}</p>
       </div>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.css';
+import { ref, onMounted } from 'vue';
 
 const testimonials = ref([
   { text: 'Estou muito satisfeito com o atendimento que recebi na Clínica Mentalis. Os médicos são extremamente competentes e atenciosos.', author: 'João Silva' },
-  { text: 'Recomendo a Clínica Mentalis a todos que buscam um serviço médico de qualidade e confiança.', author: 'Maria Santos' }
+  { text: 'Recomendo a Clínica Mentalis a todos que buscam um serviço médico de qualidade e confiança.', author: 'Maria Santos' },
+  { text: 'Recomendo vivamente a Clínica Mentalis a todos que buscam cuidados psicológicos de alta qualidade.', author: 'Ana Rodrigues' },
+  { text: 'Minha experiência na Clínica Mentalis foi incrível. Desde o primeiro contato, senti-me compreendido e apoiado.', author: 'Pedro Costa' },
+  { text: 'A experiência na Clínica Mentalis superou todas as minhas expectativas.', author: 'Carlos Andrade' }
 ]);
+
+onMounted(() => {
+  new Swiper('.testimonial-carousel', {
+    loop: true,
+    autoplay: {
+      delay: 3000, // trocar a cada 3 segundos
+    },
+  });
+});
 </script>
 
 <style scoped>
