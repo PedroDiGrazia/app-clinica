@@ -9,14 +9,14 @@ import Header from '@/Components/Header.vue';
 
 const form = useForm({
     name: '',
-    email: '',
+    registropsi: '',
     password: '',
     password_confirmation: '',
     terms: false,
 });
 
 const submit = () => {
-    form.post(route('register'), {
+    form.post(route('psicologoregister'), {
         onFinish: () => form.reset('password', 'password_confirmation'),
     });
 };
@@ -25,8 +25,8 @@ const submit = () => {
 <template>
     <Header />
     <GuestLayout>
-        <Head title="Register" />
-
+        <h1 class="text-xl flex items-center mt-4">REGISTRO PSICOLOGO</h1>
+        <Head title="Register-psi" />
         <form @submit.prevent="submit">
             <div>
                 <InputLabel for="name" value="Name" />
@@ -35,9 +35,9 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="email" value="Email" />
-                <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autocomplete="username" />
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputLabel for="registropsi" value="registropsi" />
+                <TextInput id="registropsi" type="text" class="mt-1 block w-full" v-model="form.registropsi" required autocomplete="username" />
+                <InputError class="mt-2" :message="form.errors.registropsi" />
             </div>
 
             <div class="mt-4">
@@ -53,9 +53,9 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <Link :href="route('login')" class="underline text-sm text-blue-600 hover:text-gray-900">
+                <a href="./psiretaria" class="underline text-sm text-blue-600 hover:text-gray-900">
                     Já possui um registro? Clique aqui
-                </Link>
+                </a>
 
                 <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Register

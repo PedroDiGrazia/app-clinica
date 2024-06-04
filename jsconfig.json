@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 {
     "compilerOptions": {
         "baseUrl": ".",
@@ -9,19 +7,3 @@
     },
     "exclude": ["node_modules", "public"]
 }
-=======
-=======
->>>>>>> Stashed changes
-{
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["resources/js/*"]
-        }
-    },
-    "exclude": ["node_modules", "public"]
-}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes

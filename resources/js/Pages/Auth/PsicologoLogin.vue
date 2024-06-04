@@ -14,13 +14,13 @@ defineProps({
 });
 
 const form = useForm({
-    email: '',
+    registropsi: '',
     password: '',
     remember: false
 });
 
 const submit = () => {
-    form.post(route('login'), {
+    form.post(route('psicologologin'), {
         onFinish: () => form.reset('password'),
     });
 };
@@ -37,9 +37,9 @@ const submit = () => {
 
         <form @submit.prevent="submit" class="space-y-6">
             <div>
-                <InputLabel for="email" value="Email" />
-                <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputLabel for="registropsi" value="RP" />
+                <TextInput id="registropsi" type="text" class="mt-1 block w-full" v-model="form.registropsi" required autofocus autocomplete="username" />
+                <InputError class="mt-2" :message="form.errors.registropsi" />
             </div>
 
             <div>
@@ -58,12 +58,6 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
-        <div class="flex justify-center mt-4">
-            <a href="./secretaria" class="btn btn-professional">Secretaria</a>
-        </div>
-        <div class="flex justify-center mt-4">
-            <a href="./psicologologin" class="btn btn-professional">Psicologo</a>
-        </div>
     </GuestLayout>
 </template>
 

@@ -31,7 +31,6 @@ import Sections from '../Components/Sections.vue';
 import Testimonials from '../Components/Testimonials.vue';
 import ContactForm from '../Components/ContactForm.vue';
 import Footer from '../Components/Footer.vue';
-
 import { Head } from '@inertiajs/inertia-vue3';
 </script>
 
