@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Secretaria extends Authenticatable
+class Secretaria extends Model
 {
+<<<<<<< Updated upstream
     use HasApiTokens, HasFactory, Notifiable;
     protected $table = 'secretaria'; // Defina explicitamente a tabela
     /**
@@ -40,4 +40,15 @@ class Secretaria extends Authenticatable
     protected $casts = [
         'registrosec_verified_at' => 'datetime',
     ];
+=======
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id'
+    ];
+
+    public function user(): HasOne {
+        return $this->hasOne(User::class);
+    }
+>>>>>>> Stashed changes
 }

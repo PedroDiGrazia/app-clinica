@@ -36,7 +36,7 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             'auth' => [
-                'user' => auth()->guard('web')->user(), // Aqui usamos o guard 'web' para a autenticação de 'secretaria'
+                'user' => $request->user(),
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
@@ -45,5 +45,4 @@ class HandleInertiaRequests extends Middleware
             },
         ]);
     }
-
 }

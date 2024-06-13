@@ -6,7 +6,6 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
-import Header from '@/Components/Header.vue';
 
 defineProps({
     canResetPassword: Boolean,
@@ -27,7 +26,6 @@ const submit = () => {
 </script>
 
 <template>
-    <Header />
     <GuestLayout>
         <Head title="Log in" />
 
@@ -35,57 +33,49 @@ const submit = () => {
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit" class="space-y-6">
+        <form @submit.prevent="submit">
             <div>
                 <InputLabel for="email" value="Email" />
                 <TextInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
-            <div>
+            <div class="mt-4">
                 <InputLabel for="password" value="Password" />
                 <TextInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="current-password" />
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
-            <div class="flex items-center">
-                <Checkbox name="remember" v-model:checked="form.remember" />
-                <span class="ml-2 text-sm text-gray-600">Remember me</span>
+            <div class="block mt-4">
+                <label class="flex items-center">
+                    <Checkbox name="remember" v-model:checked="form.remember" />
+                    <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                </label>
             </div>
+<<<<<<< Updated upstream
             <div class="flex justify-center mt-4">
                 <PrimaryButton class="btn btn-primary" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+=======
+
+            <div class="flex items-center justify-end mt-4">
+                <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
+                    Forgot your password?
+                </Link>
+
+                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+>>>>>>> Stashed changes
                     Log in
                 </PrimaryButton>
             </div>
         </form>
+<<<<<<< Updated upstream
         <div class="flex justify-center mt-4">
             <a href="./secretaria" class="btn btn-professional">Secretaria</a>
         </div>
         <div class="flex justify-center mt-4">
             <a href="./psicologologin" class="btn btn-professional">Psicologo</a>
         </div>
+=======
+>>>>>>> Stashed changes
     </GuestLayout>
 </template>
-
-<style scoped>
-.btn {
-  background-color: #3490dc;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-}
-.btn:hover {
-  background-color: #2779bd;
-}
-
-.btn-professional {
-  background-color: #38c172;
-}
-
-.btn-professional:hover {
-  background-color: #2d995b;
-}
-</style>

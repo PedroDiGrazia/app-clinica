@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Paciente;
+use App\Models\Psicologo;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,14 +15,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('profissionais', function (Blueprint $table) {
+        Schema::create('agendamentos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('rp')->unique();
-            $table->timestamp('rp_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
+            $table->foreignIdFor(Paciente::class)->onDelete('cascade');
+            $table->foreignIdFor(Psicologo::class)->onDelete('cascade');
+            $table->longText('anotacao')->nullable();
+            $table->date('data');
+            $table->time('hora');
         });
     }
 
@@ -31,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profissionais');
+        Schema::dropIfExists('agendamentos');
     }
 };
