@@ -32,6 +32,7 @@ Instalar as dependências do projeto dentro do container
 composer install
 npm install
 php artisan key:generate
+php artisan migrate
 npm run build
 ```
 
