@@ -15,6 +15,16 @@ APP_NAME=Laravel
 APP_URL=http://localhost:8080
 
 DB_PASSWORD=root
+
+
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=9d6bfe584d7550
+MAIL_PASSWORD=ea03ffe3c91657
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="be5026967c-1e6463@inbox.mailtrap.io"
+MAIL_FROM_NAME="${APP_NAME}"
 ```
 
 Suba os containers do projeto
